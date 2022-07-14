@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <h2>Telefonia Sayayin los mejores celulares de Namekusei </h2>
+
+    <form>
+        <h4>Telefono</h4>
+        <p><select id="telefono">
+            <option value="1399">Iphone 13</option>
+            <option value="1299">Samsung S22</option>
+            <option value="1199">Huawei P50</option>
+            <option value="1099">Xiaomi 11T</option>
+            <option value="759">Moto g 60</option>
+        </select></p>
+        <h4>Plan</h4>
+        <p><select id="plan">
+            <option value="12.99">Plan Basico</option>
+            <option value="23.99">Plan intermedio</option>
+            <option value="36.99">Plan Pro</option>
+            <option value="45.99">Ilimitado todo</option>
+        </select></p>
+        <h4>Accesorios</h4>
+        <p><select id="accesorios">
+            <option value="0">No deseo accesorios</option>
+            <option value="5.99">Accesorios basicos</option>
+            <option value="10.99">Accesorios Pro</option>
+        </select></p>
+    </form>
+    <button type="button" id="button" value="calcular total">Total</button>
+    <p class="total"><input type="text" id="resultado"></p>
+
+
+    <section id="customer">
+        <h3>Ingresa tus datos para continuar con la compra</h3>
+            <div>
+                <div class="colum1">
+                    <label for="nombre">Nombre y Apellido</label>
+                    <input type="text" id="name">
+                    <label for="telefono">Telefono</label>
+                    <input type="text" id="phone">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email">
+                    <button class="button" id="btn">Enviar</button>
+                </div>    
+            </div>
+    </section>
+    <script src="js/main.js"></script>
+</body>
+</html>
