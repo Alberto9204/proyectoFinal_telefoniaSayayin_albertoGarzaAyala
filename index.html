@@ -12,31 +12,42 @@
     <h2>Telefonia Sayayin los mejores celulares de Namekusei </h2>
 
     <form>
+    <div>
         <h4>Telefono</h4>
-        <div id="contenedor" class="m-0 row justify-content-around " class="cel" ></div>
-        <p><select id="telefono">
+        <div id="contenedor" class="m-0 row justify-content-around" class="cel" ></div>
+        <h6 class="asd">Selecione su telefono</h6>
+        <p class="tel"><select id="telefono">
             <option value="1399">Iphone 13</option>
             <option value="1299">Samsung S22</option>
             <option value="1199">Huawei P50</option>
             <option value="1099">Xiaomi 11T</option>
             <option value="759">Moto g 60</option>
-        </select></p>
+        </select></p><br><br>
+    </div>
+    <div>
         <h4>Plan</h4>
-        <p><select id="plan">
+        <div id="contPlanes" class="m-0 row justify-content-around" class="pla" ></div>
+        <h6 class="asd1">Selecione su Plan</h6>
+        <p class="pla"><select id="plan">
             <option value="12.99">Plan Basico</option>
             <option value="23.99">Plan intermedio</option>
             <option value="36.99">Plan Pro</option>
             <option value="45.99">Ilimitado todo</option>
-        </select></p>
+        </select></p><br><br>
+    </div>    
         <h4>Accesorios</h4>
-        <p><select id="accesorios">
+        <div id="contAcc" class=" row justify-content-around" class="acc" ></div>
+        <p class="pla"><select id="accesorios">
             <option value="0">No deseo accesorios</option>
             <option value="5.99">Accesorios basicos</option>
             <option value="10.99">Accesorios Pro</option>
         </select></p>
     </form>
+    <div class="total">
     <button type="button" id="button" value="calcular total">Total</button>
     <p class="total"><input type="text" id="resultado"></p>
+    <div id="final"></div>
+    </div>
 
 
     <section id="customer">

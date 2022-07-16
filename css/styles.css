@@ -1,4 +1,49 @@
 .body{
-    margin: 50;
-    padding: 60;
+    margin: 0;
+    padding: 0;   
 }
+.card{
+    border: none;
+    width: 200px;
+    height: 200px;
+}
+.card1{
+    width: 250px;
+    height: 200px;
+}
+
+.card2{
+    width: 250px;
+    height: 100px;
+}
+.tel{
+    border-radius: 5px;
+    text-align: center
+}
+   
+h2{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+.asd{
+    margin-top: 50px;
+    text-align: center;
+}
+.asd1{
+    text-align: center;
+}
+
+.pla{
+    border-radius: 5px;
+    text-align: center
+}
+
+.total{
+    text-align: center;
+    margin: 5px;
+}
+
+   
