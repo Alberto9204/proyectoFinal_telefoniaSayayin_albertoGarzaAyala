@@ -47,7 +47,7 @@ const telefonos = [
         id: 4, 
         telefono: "Xiaomi 11T", 
         costo: 1099,
-        imagen: "./assets/Xiaomi11T.jpg",
+        imagen: "./assets/xia.jpg",
     },
     {
         id: 5, 
