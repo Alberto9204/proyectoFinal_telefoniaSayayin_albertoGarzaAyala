@@ -69,6 +69,7 @@ telefonos.forEach((telefonos, indice)=>{
  imgCel.appendChild(card);
 })
 
+//se guerdan los datos en una local storage para despues hacer modificaciones si es necesario como Sumar iva
 function lsTelefonos(){
     return JSON.parse(localStorage.getItem(telefonos)) || []
 };
@@ -79,7 +80,9 @@ function guardarLsTelefonos(){
 
 guardarLsTelefonos();
 
+
 const planes = [
+//se crean los objetos con arrays para crea cards con el DOM
     {  
         id: 1, 
         plan: "Plan Basico", 
@@ -121,6 +124,9 @@ planes.forEach((planes, indice)=>{
  imgPla.appendChild(cardPlanes);
 })
 
+
+//Se guardan los datos en una local storage para despues hacer modificaciones si es necesario como Sumar iva
+
 function lsPlanes(){
     return JSON.parse(localStorage.getItem(planes)) || []
 };
@@ -131,6 +137,9 @@ function guardarLsPlanes(){
 
 guardarLsPlanes();
 
+
+//se crean los objetos con arrays para crea cards con el DOM
+
 const accesorio = [
     {
         id: 1, 
@@ -139,12 +148,12 @@ const accesorio = [
     },
     {
         id: 2, 
-        accesorios: "Accesorios basicos", 
+        accesorios: "Accesorios basicos <br> -Audifonos <br> -Funda protectora.", 
         costo: 5.99,  
     },
     {
         id: 3, 
-        accesorios: "Accesorios Pro", 
+        accesorios: "Accesorios Pro <br> -Audifonos <br> -Funda protectora <br> -Mica de cristal <br> -Selfie sticky.", 
         costo: 10.99,
     },
 ];
@@ -171,6 +180,9 @@ function guardarLsaccesorio(){
 
 guardarLsaccesorio();
 
+
+
+
 //aqui se pediran los datos del cliente y se guardaran en la pagina por si vuelve a entrar ya esten sus guardo guardados.
 
    class identificador {
@@ -178,7 +190,6 @@ guardarLsaccesorio();
         this.nombre = nombre;
         this.telefono = telefono;
         this.email = email;
-    
     }
 }
 
@@ -192,8 +203,20 @@ function cargarCliente() {
     let usuario1 = new identificador(nombre, telefono, email);
     console.log(usuario1);
     mostrarCliente(usuario1);
+    console.log(nombre);
 
+    function guardarCliente(){
+        return JSON.parse(localStorage.getItem(usuario1)) || []
+    };
+    
+    function guardarClientes(){
+        localStorage.setItem("cliente", JSON.stringify(usuario1));
+    };
+    
+    guardarCliente()
+    guardarClientes();
 }
+
 
 function mostrarCliente(identificador){
     let formulario = document.getElementById("customer");
