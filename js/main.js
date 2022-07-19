@@ -10,6 +10,7 @@ boton.onclick = () => {
     let ele3 = document.getElementById("accesorios");
     let precio3= parseFloat(ele3.options[ele3.selectedIndex].value);
     let suma = `Total $ ${precio1 + precio2 + precio3}`;
+    let descuento = precio1 + precio2 + precio3;
     document.getElementById("resultado").value = suma
     let meses = parseFloat(((precio1+precio2+precio3) / 12)).toFixed(2)
     document.getElementById("final").innerHTML=""
@@ -19,8 +20,10 @@ boton.onclick = () => {
     let htmlFinal = `Resumen de tu compra <br> Escogiste el telefono ${ele1.options[ele1.selectedIndex].text}<br>Escogiste el plan ${ele2.options[ele2.selectedIndex].text}<br> En los accesorios desicidiste ${ele3.options[ele3.selectedIndex].text} <br> Este es tu total de tu compra ${suma} <br> Si quieres podemos diferir tu compra a 12 meses sin intereses siendo 12 pagos de ${meses} `;
     final.innerHTML= htmlFinal;
     totalFinal.appendChild(final);
+   
+/// Primer Operador ternario
+    descuento > 1200 ? alert("Ganaste un descuento") : alert ("Continua para llenar tus datos")
 }
-
 
 
 //se crean los objetos con arrays para crea cards con el DOM
@@ -55,7 +58,11 @@ const telefonos = [
         costo: 759,
         imagen: "./assets/moto.webp",
     },
+    
 ];
+//utilizando el spread
+console.log(...telefonos)
+
 
 const imgCel = document.getElementById("contenedor");
 telefonos.forEach((telefonos, indice)=>{
@@ -69,16 +76,8 @@ telefonos.forEach((telefonos, indice)=>{
  imgCel.appendChild(card);
 })
 
-//se guerdan los datos en una local storage para despues hacer modificaciones si es necesario como Sumar iva
-function lsTelefonos(){
-    return JSON.parse(localStorage.getItem(telefonos)) || []
-};
 
-function guardarLsTelefonos(){
-    localStorage.setItem("telefonos", JSON.stringify(telefonos));
-};
 
-guardarLsTelefonos();
 
 
 const planes = [
@@ -108,6 +107,8 @@ const planes = [
         paquete: "Con este plan tendras lo tendras todo ilimitado",
     },
 ];
+//utilizando el spread
+console.log(...planes)
 
 const imgPla = document.getElementById("contPlanes");
 planes.forEach((planes, indice)=>{
@@ -125,17 +126,7 @@ planes.forEach((planes, indice)=>{
 })
 
 
-//Se guardan los datos en una local storage para despues hacer modificaciones si es necesario como Sumar iva
 
-function lsPlanes(){
-    return JSON.parse(localStorage.getItem(planes)) || []
-};
-
-function guardarLsPlanes(){
-    localStorage.setItem("planes", JSON.stringify(planes));
-};
-
-guardarLsPlanes();
 
 
 //se crean los objetos con arrays para crea cards con el DOM
@@ -157,6 +148,8 @@ const accesorio = [
         costo: 10.99,
     },
 ];
+console.log(...accesorio)
+
 
 const imgAcc = document.getElementById("contAcc");
 accesorio.forEach((accesorio, indice)=>{
@@ -169,16 +162,6 @@ accesorio.forEach((accesorio, indice)=>{
  imgAcc.appendChild(cardAcc);
 
 })
-
-function lsaccesorio(){
-    return JSON.parse(localStorage.getItem(accesorio)) || []
-};
-
-function guardarLsaccesorio(){
-    localStorage.setItem("accesorio", JSON.stringify(accesorio));
-};
-
-guardarLsaccesorio();
 
 
 
@@ -200,11 +183,19 @@ function cargarCliente() {
     let nombre = document.getElementById("name").value;
     let telefono = document.getElementById("phone").value;
     let email = document.getElementById("email").value;
+    if (nombre === ""){
+        alert("Agrega tu nombre"); 
+        nombre = prompt("Agrega correctamente tu nombre");
+    }
+    if (email === ""){
+        alert("Agrega tu email"); 
+        email = prompt("Agrega correctamente tu email");
+    }
+   
     let usuario1 = new identificador(nombre, telefono, email);
-    console.log(usuario1);
     mostrarCliente(usuario1);
-    console.log(nombre);
 
+//Aqui utilizamos el primero operador ternario OR
     function guardarCliente(){
         return JSON.parse(localStorage.getItem(usuario1)) || []
     };
@@ -213,9 +204,8 @@ function cargarCliente() {
         localStorage.setItem("cliente", JSON.stringify(usuario1));
     };
     
-    guardarCliente()
+    guardarCliente();
     guardarClientes();
-}
 
 
 function mostrarCliente(identificador){
@@ -226,4 +216,5 @@ function mostrarCliente(identificador){
 
     nuevoContenido.className = "info-cliente";
     formulario.appendChild(nuevoContenido);
+}
 }
