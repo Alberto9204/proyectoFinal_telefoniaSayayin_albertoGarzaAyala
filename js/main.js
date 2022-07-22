@@ -22,7 +22,7 @@ boton.onclick = () => {
     totalFinal.appendChild(final);
    
 /// Primer Operador ternario
-    descuento > 1200 ? alert("Ganaste un descuento") : alert ("Continua para llenar tus datos")
+    descuento > 1200 ? Swal.fire('Ganaste un descuento', 'Muchas felicidades Guerrero', 'success') : Swal.fire('Continua con el llenado de tus datos', 'Llenalos correctamente', 'info')
 }
 
 
@@ -179,22 +179,24 @@ accesorio.forEach((accesorio, indice)=>{
 let btn = document.getElementById("btn");
 btn.addEventListener("click", cargarCliente);
 
+
+
 function cargarCliente() {
     let nombre = document.getElementById("name").value;
     let telefono = document.getElementById("phone").value;
     let email = document.getElementById("email").value;
     if (nombre === ""){
-        alert("Agrega tu nombre"); 
-        nombre = prompt("Agrega correctamente tu nombre");
+        Swal.fire('Gracias por agregar tu nombre');
+        nombre =  prompt("Agrega correctamente tu nombre");
     }
+  
     if (email === ""){
-        alert("Agrega tu email"); 
-        email = prompt("Agrega correctamente tu email");
+        Swal.fire('Gracias por agregar tu E-mail');
+        email = prompt("Agrega tu E-mail");
     }
-   
     let usuario1 = new identificador(nombre, telefono, email);
     mostrarCliente(usuario1);
-
+    
 //Aqui utilizamos el primero operador ternario OR
     function guardarCliente(){
         return JSON.parse(localStorage.getItem(usuario1)) || []
@@ -206,7 +208,7 @@ function cargarCliente() {
     
     guardarCliente();
     guardarClientes();
-
+    }
 
 function mostrarCliente(identificador){
     let formulario = document.getElementById("customer");
@@ -217,4 +219,4 @@ function mostrarCliente(identificador){
     nuevoContenido.className = "info-cliente";
     formulario.appendChild(nuevoContenido);
 }
-}
+
