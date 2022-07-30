@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1, 
+        "accesorios": "No deseo accesorios", 
+        "costo": 0
+    },
+    {
+        "id": 2, 
+        "accesorios": "Accesorios basicos <br> -Audifonos <br> -Funda protectora.", 
+        "costo": 5.99 
+    },
+    {
+        "id": 3, 
+        "accesorios": "Accesorios Pro <br> -Audifonos <br> -Funda protectora <br> -Mica de cristal <br> -Selfie sticky.", 
+        "costo": 10.99
+    }
+]

@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "telefono": "Iphone 13", 
+        "costo": 1399,
+        "imagen": "./assets/iphone-13-pro-family-select.jpeg"
+    },
+    {
+        "id": 2, 
+        "telefono": "Samsung S22", 
+        "costo": 1299,
+        "imagen": "./assets/samsung.png"
+    },
+    {
+        "id": 3, 
+        "telefono": "Huawei P50", 
+        "costo": 1199,
+        "imagen": "./assets/hauwei.png"
+    },
+    {
+        "id": 4, 
+        "telefono": "Xiaomi 11T", 
+        "costo": 1099,
+        "imagen": "./assets/xia.webp"
+    },
+    {
+        "id": 5, 
+        "telefono": "Moto g 60", 
+        "costo": 759,
+        "imagen": "./assets/moto.webp"
+    }
+    
+]

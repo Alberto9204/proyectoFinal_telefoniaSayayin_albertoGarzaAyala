@@ -26,92 +26,28 @@ boton.onclick = () => {
 }
 
 
-//se crean los objetos con arrays para crea cards con el DOM
-const telefonos = [
-    {
-        id: 1,
-        telefono: "Iphone 13", 
-        costo: 1399,
-        imagen: "./assets/iphone-13-pro-family-select.jpeg",
-    },
-    {
-        id: 2, 
-        telefono: "Samsung S22", 
-        costo: 1299,
-        imagen: "./assets/samsung.png",
-    },
-    {
-        id: 3, 
-        telefono: "Huawei P50", 
-        costo: 1199,
-        imagen: "./assets/hauwei.png",
-    },
-    {
-        id: 4, 
-        telefono: "Xiaomi 11T", 
-        costo: 1099,
-        imagen: "./assets/xia.webp",
-    },
-    {
-        id: 5, 
-        telefono: "Moto g 60", 
-        costo: 759,
-        imagen: "./assets/moto.webp",
-    },
-    
-];
-//utilizando el spread
-console.log(...telefonos)
-
-
+fetch('js/telefonos.json')
+.then((response) => response.json())
+.then((tel) => {
 const imgCel = document.getElementById("contenedor");
-telefonos.forEach((telefonos, indice)=>{
+tel.forEach(telefonos=>{
     let card = document.createElement("div");
-    card.classList.add("card","col-sm-3","col-lg-2","row");
+    card.classList.add("card","col-sm-3","col-lg-2","row",);
     let html = `<div class="card">
-    <img src="${telefonos.imagen}" class="card-img-top height=60px" alt="Iphone13">
+    <img src="${telefonos.imagen}" imgfluid class="card-img-top" alt="Iphone13">
       <p class="card-text text-center">${telefonos.telefono}<br> $ ${telefonos.costo}</p>
   </div>`;
  card.innerHTML= html;
  imgCel.appendChild(card);
 })
+})
 
 
-
-
-
-const planes = [
-//se crean los objetos con arrays para crea cards con el DOM
-    {  
-        id: 1, 
-        plan: "Plan Basico", 
-        costo: 12.99,
-        paquete: "Con este plan tendras 100 minutos, 100 sms y 1 gb de internet al mes",
-    },
-    {
-        id: 2, 
-        plan: "Plan intermedio", 
-        costo: 23.99,
-        paquete: "Con este plan tendras 250 minutos, 250 sms y 2.5 gb de internet al mes",
-    },
-    {
-        id: 3, 
-        plan: "Plan Pro", 
-        costo: 36.99,
-        paquete: "Con este plan tendras 400 minutos, 400 sms y 4 gb de internet al mes",
-    },
-    {
-        id: 4, 
-        plan: "Ilimitado todo", 
-        costo: 45.99,
-        paquete: "Con este plan tendras lo tendras todo ilimitado",
-    },
-];
-//utilizando el spread
-console.log(...planes)
-
+fetch('js/planes.json')
+.then((response) => response.json())
+.then((pla) => {
 const imgPla = document.getElementById("contPlanes");
-planes.forEach((planes, indice)=>{
+pla.forEach((planes)=>{
     let cardPlanes = document.createElement("div");
     cardPlanes.classList.add("card1","col-sm-4","col-lg-4","row");
     let htmlPlanes = `<div class="card1">
@@ -123,6 +59,7 @@ planes.forEach((planes, indice)=>{
   </div>`;
  cardPlanes.innerHTML= htmlPlanes;
  imgPla.appendChild(cardPlanes);
+}) 
 })
 
 
@@ -131,28 +68,11 @@ planes.forEach((planes, indice)=>{
 
 //se crean los objetos con arrays para crea cards con el DOM
 
-const accesorio = [
-    {
-        id: 1, 
-        accesorios: "No deseo accesorios", 
-        costo: 0,   
-    },
-    {
-        id: 2, 
-        accesorios: "Accesorios basicos <br> -Audifonos <br> -Funda protectora.", 
-        costo: 5.99,  
-    },
-    {
-        id: 3, 
-        accesorios: "Accesorios Pro <br> -Audifonos <br> -Funda protectora <br> -Mica de cristal <br> -Selfie sticky.", 
-        costo: 10.99,
-    },
-];
-console.log(...accesorio)
-
-
+fetch('js/accesorios.json')
+.then((response) => response.json())
+.then((acc) => {
 const imgAcc = document.getElementById("contAcc");
-accesorio.forEach((accesorio, indice)=>{
+acc.forEach((accesorio)=>{
     let cardAcc = document.createElement("div");
     cardAcc.classList.add("card2","col-sm-3","col-lg-2","row","img");
     let htmlacc = `<div class="card2>
@@ -160,7 +80,7 @@ accesorio.forEach((accesorio, indice)=>{
   </div>`;
  cardAcc.innerHTML= htmlacc;
  imgAcc.appendChild(cardAcc);
-
+})
 })
 
 
