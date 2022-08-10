@@ -10,21 +10,28 @@ boton.onclick = () => {
     let ele3 = document.getElementById("accesorios");
     let precio3= parseFloat(ele3.options[ele3.selectedIndex].value);
     let suma = `Total $ ${precio1 + precio2 + precio3}`;
-    let descuento = precio1 + precio2 + precio3;
-        if (descuento > 1200){
-            suma = (descuento-(descuento * .15)).toFixed(2)
-        }
-    document.getElementById("resultado").value = suma
-    let meses = parseFloat(((suma) / 12)).toFixed(2)
+    let sumaT = precio1 + precio2 + precio3;
+    let descuento = sumaT;
+        if (sumaT > 1200){
+          descuento = (sumaT-(sumaT * .15)).toFixed(2)
+        };
+    let meses = (parseFloat(((descuento) / 12)).toFixed(2))    
+    document.getElementById("resultado").value = sumaT;
     document.getElementById("final").innerHTML=""
     const totalFinal = document.getElementById("final");
     let final = document.createElement("p");
     final.classList.add("totalF");
-    let htmlFinal = `Resumen de tu compra <br> Escogiste el telefono ${ele1.options[ele1.selectedIndex].text}<br>Escogiste el plan ${ele2.options[ele2.selectedIndex].text}<br> En los accesorios desicidiste ${ele3.options[ele3.selectedIndex].text} <br> Este es tu total de tu compra ${suma} <br> Si quieres podemos diferir tu compra a 12 meses sin intereses siendo 12 pagos de ${meses} `;
+    let htmlFinal = `Resumen de tu compra <br> 
+    Escogiste el telefono ${ele1.options[ele1.selectedIndex].text}<br>
+    Escogiste el plan ${ele2.options[ele2.selectedIndex].text}<br> 
+    En los accesorios desicidiste ${ele3.options[ele3.selectedIndex].text} <br> 
+    Este es tu total de tu compra $ ${suma} <br> 
+    Ya con tu descuento ganado es un Total de $ ${descuento} <br>
+    Si quieres podemos diferir tu compra a 12 meses sin intereses siendo 12 pagos de $ ${meses} `;
     final.innerHTML= htmlFinal;
     totalFinal.appendChild(final);
    
-    descuento > 1200 ? Swal.fire('Ganaste un descuento', 'Muchas felicidades Guerrero', 'success') : Swal.fire('Continua con el llenado de tus datos', 'Llenalos correctamente', 'info')
+    sumaT > 1200 ? Swal.fire('Ganaste un descuento', 'Muchas felicidades Guerrero Sayayin', 'success') : Swal.fire('No ganaste descuento,<br> Revisa el resumen de compra, <br> Continua con el llenado de tus datos', 'Llenalos correctamente no seas un insecto', 'info');
 
 }
 
@@ -74,7 +81,7 @@ acc.forEach((accesorio)=>{
     let cardAcc = document.createElement("div");
     cardAcc.classList.add("card2","col-sm-3","col-lg-2","row","img");
     let htmlacc = `<div class="card2>
-    <p class="card-text">${accesorio.accesorios}. <br> <b>Por solo $ ${accesorio.costo}</b></p>
+    <p class="card-text"><b>${accesorio.name}</b><br> ${accesorio.accesorios} <br> <b>Por solo $ ${accesorio.costo}</b></p>
   </div>`;
  cardAcc.innerHTML= htmlacc;
  imgAcc.appendChild(cardAcc);
