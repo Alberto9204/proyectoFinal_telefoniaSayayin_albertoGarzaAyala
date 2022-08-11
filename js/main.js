@@ -25,7 +25,7 @@ boton.onclick = () => {
     Escogiste el telefono ${ele1.options[ele1.selectedIndex].text}<br>
     Escogiste el plan ${ele2.options[ele2.selectedIndex].text}<br> 
     En los accesorios desicidiste ${ele3.options[ele3.selectedIndex].text} <br> 
-    Este es tu total de tu compra $ ${suma} <br> 
+    Este es tu total de tu compra ${suma} <br> 
     Ya con tu descuento ganado es un Total de $ ${descuento} <br>
     Si quieres podemos diferir tu compra a 12 meses sin intereses siendo 12 pagos de $ ${meses} `;
     final.innerHTML= htmlFinal;
