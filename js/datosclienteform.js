@@ -70,7 +70,8 @@ function mostrarCliente(identificador){
     let formulario = document.getElementById("customer");
     formulario.innerHTML = "";
     let nuevoContenido = document.createElement("div");
-    nuevoContenido.innerHTML = `Gracias ${identificador.nombre} ! sus datos fueron recibido pronto recibira su orden de compra en su correo ${identificador.email} y su paquete en la siguiente direccion ${identificador.direccion}`;
+    nuevoContenido.innerHTML = `<p>Gracias ${identificador.nombre} ! sus datos fueron recibido pronto recibira su orden de compra en su correo ${identificador.email} y su paquete en la siguiente direccion ${identificador.direccion}</p>
+                                <br> <p>Hasta la Proxima Guerrero Sayayin</p>`;
     nuevoContenido.className = "info-cliente";
     formulario.appendChild(nuevoContenido);
 }
